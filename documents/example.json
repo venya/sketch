@@ -1,0 +1,65 @@
+{
+	"document" : {
+		"title": "Official Example",
+		"modified": "<date>",
+		"version": 1.0
+	},
+	"author": {
+		"name":	"Veniamin Zolotukhin",
+		"email": "venya@venya.com"
+	},
+	"selection": {
+		"page": 0,
+		"selection": [],
+		"active": false
+	},
+	"pages": [
+		{
+			"title": "Page 1",
+			"items": [
+				{
+					"type": "artboard",
+					"title": "Artboard Desktop",
+					"width": 320,
+					"height": 240,
+					"left": 50,
+					"top": 50,
+					"background": "#ffffff",
+					"export": false,
+					"items": [
+						{
+							"type": "text",
+							"title": "Header",
+							"content": "Header",
+							"fill": "#707070",
+							"font": {
+								"face": "Roboto",
+								"size": 14,
+								"weight": 400
+							}
+						}
+					]
+				},
+				{
+					"type": "artboard",
+					"title": "Mobile Artboard",
+					"width": 200,
+					"height": 300,
+					"left": 400,
+					"top": 50,
+					"fill": "#ffffff",
+					"export": false,
+					"items": []
+				}
+			]
+		},
+		{
+			"title": "Empty Page 2",
+			"items": []
+		},
+		{
+			"title": "Symbols",
+			"items": []
+		}
+	]
+}
