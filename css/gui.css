@@ -63,6 +63,9 @@
 
 .layer {
 }
+.layer.open {
+	font-weight: bold;
+}
 .layer.active {
 	background: #6b9de3;
 	background: skyblue;

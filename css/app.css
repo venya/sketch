@@ -52,12 +52,13 @@ main.artboards {
 
 /*	Canvas elements	*/
 
-main .group {
+main .art {
 	position: absolute;
 }
-main .text {
-	position: absolute;
-}
+
+.art .text {}
+.art .group {}
+
 
 .artboard {
 	background: white;
@@ -76,3 +77,34 @@ main .text {
 	font-size: 12px;
 	user-select: none;
 }
+
+/* selection handle */
+.box {
+	position: absolute;
+	border: dotted gray 1px;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	cursor: move;
+	z-index: 2;
+}
+.box > b {
+	position: absolute;
+	display: block;
+	width: 5px;
+	height: 5px;
+	background: white;
+	box-shadow: 0 0 2px rgba(0,0,0, .6);
+	mix-blend-mode: exclusion;
+}
+.box .tl {top:-3px; left:-3px; cursor: nw-resize;}
+.box .tr {top:-3px; right:-3px; cursor: ne-resize;}
+.box .bl {bottom:-3px; left:-3px; cursor: ne-resize;}
+.box .br {bottom:-3px; right:-3px; cursor: nw-resize;}
+.box .t {right:50%; margin-left:-3px; top:-3px; cursor: n-resize;}
+.box .b {right:50%; margin-left:-3px; bottom:-3px; cursor: n-resize;}
+.box .l {top:50%; margin-top:-3px; left:-3px; cursor: w-resize;}
+.box .r {top:50%; margin-top:-3px; right:-3px; cursor: w-resize;}
+
+
