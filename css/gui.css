@@ -1,0 +1,61 @@
+
+/*	Toolbar	*/
+.btn-toolbar,
+.btn-group {
+	margin-right: 10px;
+}
+.btn-group .btn {
+	margin-right: -1px;
+}
+.btn-toolbar {
+	box-sizing: border-box;
+	font-size: 11px;
+	color: #555;
+	background: none;
+	padding: 0 8px;
+	line-height: 28px;
+	height: 30px;
+	border: solid silver 1px;
+	outline: none;
+}
+.btn-toolbar:hover {
+	/*border-color: gray;*/
+}
+.btn-toolbar:active {
+	border-top-color: gray;
+	border-left-color: gray;
+	background-color: silver;
+	box-shadow: inset 1px 1px 4px rgba(0,0,0, .4);
+}
+
+.btn-toolbar .icon {
+	margin-right: 4px;
+	line-height: inherit;
+	vertical-align: middle;
+}
+
+/*	Layers List	*/
+.page,
+.layer {
+	padding: 8px 10px;
+	line-height: 16px;
+	vertical-align: top;
+	cursor: default;
+}
+.page .icon,
+.layer .icon {
+	min-width: 20px;
+}
+
+
+.page {
+	border-bottom: solid #c4c4c4 1px;
+}
+.page.active {
+	background: white;
+}
+
+
+.layer {
+
+}

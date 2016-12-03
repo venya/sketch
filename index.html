@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sketch Web App</title>
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<link rel="stylesheet" type="text/css" href="css/gui.css">
+	<link rel="stylesheet" type="text/css" href="css/icons.css">
+	<link id="page_favicon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAq0lEQVQ4T63SMRaCMBAE0NmTeC0KGz0HJVzDysbK2ktYep3w5sHIZklAnmwb5r9lEkNtupTQmlXPp4PyB11KtzNwvQNbyBKYwpcT0DyBx2cdyQEX5oYEOGvIDISwBzIkdDMChXAEhMRurBYubcBw7OYLMMBDP74DhWM3GRAR3YIPbwIesR6I4Z8AIQJKm6nUxS/4DvgSuYFGHfludgHa5C+AyOs9v9DdGxwODMO4hKNwowSSAAAAAElFTkSuQmCC" rel="icon" type="image/x-icon">
+</head>
+<body>
+	<header>
+		<span class="btn-group">
+			<button class="btn btn-toolbar"><i class="icon icon-add-page"></i>Add Page</button>
+			<button class="btn btn-toolbar">New <u>A</u>rtboard</button>
+			<button class="btn btn-toolbar"><u>R</u>ectangle</button>
+			<button class="btn btn-toolbar"><u>T</u>ext</button>
+		</span>
+		<span class="btn-group">
+			<button class="btn btn-toolbar"><i class="icon icon-group"></i><u>G</u>roup</button>
+			<button class="btn btn-toolbar"><i class="icon icon-ungroup"></i><u>U</u>ngroup</button>
+		</span>
+		<button class="btn btn-toolbar"><u>S</u>ymbol</button>
+	</header>
+	<nav>
+		<div class="page active"><i class="icon icon-page"></i>Page 1</div>
+		<div class="layer layer-text"><i class="icon icon-text"></i>Header</div>
+		<div class="layer layer-artboard active"><i class="icon icon-artboard"></i>Artboard Desktop</div>
+		<div class="layer layer-artboard"><i class="icon icon-artboard"></i>Mobile Artboard</div>
+		<div class="page"><i class="icon icon-page"></i>Empty Page 2</div>
+		<div class="page"><i class="icon icon-page"></i>Symbols</div>
+	</nav>
+	<main class="artboards">
+		<!-- Canvas elements goes here -->
+		<div class="artboard" style="width: 320px;height:240px; left:50px;top:50px;">
+			<div class="artboard-title">Artboard Desktop</div>
+		</div>
+	</main>
+	<aside>
+		Inspector
+	</aside>
+<script src="app.js"></script>
+</body>
+</html>
