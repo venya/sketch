@@ -50,7 +50,12 @@ main.artboards {
 	background: #f2f2f2;
 }
 
-.group {
+/*	Canvas elements	*/
+
+main .group {
+	position: absolute;
+}
+main .text {
 	position: absolute;
 }
 
@@ -58,6 +63,9 @@ main.artboards {
 	background: white;
 	position: absolute;
 	box-shadow: 0 2px 6px rgba(0,0,0, .3);
+}
+.artboard.active {
+	outline: solid skyblue 1px;
 }
 
 .artboard-title {

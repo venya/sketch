@@ -5,7 +5,7 @@
 	<link rel="stylesheet" type="text/css" href="css/app.css">
 	<link rel="stylesheet" type="text/css" href="css/gui.css">
 	<link rel="stylesheet" type="text/css" href="css/icons.css">
-	<link id="page_favicon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAq0lEQVQ4T63SMRaCMBAE0NmTeC0KGz0HJVzDysbK2ktYep3w5sHIZklAnmwb5r9lEkNtupTQmlXPp4PyB11KtzNwvQNbyBKYwpcT0DyBx2cdyQEX5oYEOGvIDISwBzIkdDMChXAEhMRurBYubcBw7OYLMMBDP74DhWM3GRAR3YIPbwIesR6I4Z8AIQJKm6nUxS/4DvgSuYFGHfludgHa5C+AyOs9v9DdGxwODMO4hKNwowSSAAAAAElFTkSuQmCC" rel="icon" type="image/x-icon">
+	<link id="page_favicon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAxUlEQVQ4T42SvQ0CMQxGP69wK7AAFRuAGIBxmIQNEAuA2IAfiYoOMQF0FFRBzimH7djRpbXfsx2b0Hi7V0qbM3BcEkVpYYDhVQcsDj0aSVxBgRksgkhSCSRsBZ5ECSx8/QDbO3B76x+Q4wwCD35+e/D0iCVZ0IJL7UhCY+CWhOb7lOSE0w6YTfyt55u46FgeYYzEg7Gm/4W1JBHMxdUaPQmv0LbNlcsg1SFZSQuuOihWKVECUTnswEoGgQOHHUhJFgQw5/0AcO90jhO0BMkAAAAASUVORK5CYII=" rel="icon" type="image/x-icon">
 </head>
 <body>
 	<header>
@@ -23,16 +23,24 @@
 	</header>
 	<nav>
 		<div class="page active"><i class="icon icon-page"></i>Page 1</div>
-		<div class="layer layer-text"><i class="icon icon-text"></i>Header</div>
-		<div class="layer layer-artboard active"><i class="icon icon-artboard"></i>Artboard Desktop</div>
-		<div class="layer layer-artboard"><i class="icon icon-artboard"></i>Mobile Artboard</div>
+		<div class="layer l0 layer-text"><i class="icon layer-text"></i>Header</div>
+		<div class="layer l0 layer-artboard open"><i class="icon expand open"></i><i class="icon layer-artboard"></i>Artboard Desktop</div>
+		<div class="layer l1 layer-group open"><i class="icon expand open"></i><i class="icon layer-group"></i>Page Header Group</div>
+		<div class="layer l2 layer-text active"><i class="icon layer-text"></i>Header</div>
+		<div class="layer l2 layer-rect"><i class="icon layer-rect"></i>Header Box</div>
+		<div class="layer l1 layer-text"><i class="icon layer-text"></i>Welcome text</div>
+		<div class="layer l1 layer-artboard"><i class="icon expand"></i><i class="icon layer-artboard"></i>Mobile Artboard</div>
 		<div class="page"><i class="icon icon-page"></i>Empty Page 2</div>
 		<div class="page"><i class="icon icon-page"></i>Symbols</div>
 	</nav>
 	<main class="artboards">
 		<!-- Canvas elements goes here -->
-		<div class="artboard" style="width: 320px;height:240px; left:50px;top:50px;">
+		<div class="text" style="top:30px;left:50px;font-size:24px;font-weight:bold;">Header Text</div>
+		<div class="artboard active" style="width: 320px;height:240px; left:50px;top:100px;">
 			<div class="artboard-title">Artboard Desktop</div>
+		</div>
+		<div class="artboard" style="width: 200px;height:300px; left:400px;top:100px;">
+			<div class="artboard-title">Mobile Artboard</div>
 		</div>
 	</main>
 	<aside>

@@ -49,13 +49,26 @@
 
 
 .page {
+	border-top: solid #c4c4c4 1px;
 	border-bottom: solid #c4c4c4 1px;
 }
 .page.active {
 	background: white;
 }
+.page + .page {
+	margin-top: -1px;
+}
+
 
 
 .layer {
-
 }
+.layer.active {
+	background: #6b9de3;
+	background: skyblue;
+}
+
+.l0 {padding-left: 1em;}
+.l1 {padding-left: 2em;}
+.l2 {padding-left: 3em;}
+.l3 {padding-left: 4em;}
