@@ -53,7 +53,8 @@
 .layer.page.active {
 	background: white;
 }
-.page + .page {
+.layer.page:first-child,
+.layer.page + .page {
 	margin-top: -1px;
 }
 

@@ -37,6 +37,7 @@ aside {
 	background: #e7e7e7;
 	right: 0;
 	border-left: solid #c4c4c4 1px;
+	padding: 0 10px;
 }
 
 main {
@@ -103,8 +104,8 @@ main .artboard.active {
 .box .tr {top:-3px; right:-3px; cursor: ne-resize;}
 .box .bl {bottom:-3px; left:-3px; cursor: ne-resize;}
 .box .br {bottom:-3px; right:-3px; cursor: nw-resize;}
-.box .t {right:50%; margin-left:-3px; top:-3px; cursor: n-resize;}
-.box .b {right:50%; margin-left:-3px; bottom:-3px; cursor: n-resize;}
+.box .t {left:50%; margin-left:-3px; top:-3px; cursor: n-resize;}
+.box .b {left:50%; margin-left:-3px; bottom:-3px; cursor: n-resize;}
 .box .l {top:50%; margin-top:-3px; left:-3px; cursor: w-resize;}
 .box .r {top:50%; margin-top:-3px; right:-3px; cursor: w-resize;}
 
