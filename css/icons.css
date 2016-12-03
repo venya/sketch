@@ -4,8 +4,10 @@
 	width: 16px;
 	height: 16px;
 	vertical-align: top;
+	background: url(../img/icons.png) no-repeat;
 }
 
+/*
 .icon-page {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAXklEQVQ4T2NkoBAwIusvKCj4j8u8CRMmoKiFqSPaAJAGbIZgNQBZIchVID7MdeiGEG0AyAXYDCHJAGyGEGUAtoCFeYWgAeia0b0xagADA23CgJj8hTcayTaAGI3oagB9s2wRGBy2jQAAAABJRU5ErkJggg==) no-repeat;}
 .icon-add-page {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAWUlEQVQ4T2NkgID/UJoQxYiuACZArAEg/SiGoBuAYQMOF8LVkWsA3CV0MwA57GDhBbackAtAitHDhT4GYItWrK4dvF7Al6RJCkRsBtHWAEK5EVkea0Ii2QAAWsUhESCt4okAAAAASUVORK5CYII=) no-repeat;}
 .icon-group {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAdUlEQVQ4T62TUQ5AEQwE6/6H9tIm9dampYQfhJ2MoolIl781GK+GI6MBnXhfzNs2y3DwykBpO4sIbBlfQABv9jU+3hHAwwg/AmCxHXYFQJMUEF0lX/eYcxEnPSJxoUMDBJRMMoOySQWwNHnylHfPOPtgbz7TB+QEOAt+VWw2AAAAAElFTkSuQmCC) no-repeat;}
@@ -17,5 +19,27 @@
 
 .icon.expand {width:12px;min-width:0; background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAASUlEQVQ4T2NkoBAwUqifgXoGlJeX/+/s7CTZQLgGkAEg75BqCIYBpBqC1QBSDMFpALGG0MYFpAQkdWOBFJthKZjkhIOe9IeBAQBUWCQRtjkSWwAAAABJRU5ErkJggg) no-repeat;}
 .icon.expand.open {background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAASklEQVQ4T2NkoBAwUqifYdQABiqEQXl5+X9CMdHZ2YkzsMES+AzBpxmkF24yNkMIaUYxAN0lxGjGMABmCLGasRpAKEDR5YdBUgYAQaYUEa1De/MAAAAASUVORK5CYII=) no-repeat;}
+*/
 
+/*	Toolbar icons	*/
+.icon.add-page {background-position: -0px -0px;}
+.icon.add-artboard {background-position: -20px -0px;}
+.icon.do-group {background-position: -40px -0px;}
+.icon.un-group {background-position: -60px -0px;}
+
+.icon.add-text {background-position: -0px -20px;}
+.icon.add-rect {background-position: -20px -20px;}
+.icon.add-circle {background-position: -40px -20px;}
+
+/*	Layer-types	*/
+.icon.page {background-position: -0px -60px;}
+.icon.artboard {background-position: -20px -60px;}
+.icon.group {background-position: -40px -60px;}
+.icon.symbol {background-position: -60px -60px;}
+
+.icon.text {background-position: -0px -80px;}
+.icon.rect {background-position: -20px -80px;}
+
+.icon.expand {width:12px; min-width:0; background-position: 0px -100px;}
+.icon.expand.open {background-position: -20px -100px;}
 

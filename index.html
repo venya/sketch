@@ -10,35 +10,37 @@
 <body>
 	<header>
 		<span class="btn-group">
-			<button class="btn btn-toolbar"><i class="icon icon-add-page"></i>Add Page</button>
-			<button class="btn btn-toolbar">New <u>A</u>rtboard</button>
-			<button class="btn btn-toolbar"><u>R</u>ectangle</button>
-			<button class="btn btn-toolbar"><u>T</u>ext</button>
+			<button class="btn btn-toolbar"><i class="icon add-page"></i>Add Page</button>
+			<button class="btn btn-toolbar"><i class="icon add-artboard"></i>New <u>A</u>rtboard</button>
+			<button class="btn btn-toolbar"><i class="icon add-rect"></i><u>R</u>ectangle</button>
+			<button class="btn btn-toolbar"><i class="icon add-text"></i><u>T</u>ext</button>
+			<button class="btn btn-toolbar"><i class="icon add-circle"></i></button>
 		</span>
 		<span class="btn-group">
-			<button class="btn btn-toolbar"><i class="icon icon-group"></i><u>G</u>roup</button>
-			<button class="btn btn-toolbar"><i class="icon icon-ungroup"></i><u>U</u>ngroup</button>
+			<button class="btn btn-toolbar"><i class="icon do-group"></i><u>G</u>roup</button>
+			<button class="btn btn-toolbar"><i class="icon un-group"></i><u>U</u>ngroup</button>
 		</span>
-		<button class="btn btn-toolbar"><u>S</u>ymbol</button>
+		<button class="btn btn-toolbar"><i class="icon add-symbol"></i>Create <u>S</u>ymbol</button>
 	</header>
 	<nav>
-		<div class="page active"><i class="icon icon-page"></i>Page 1</div>
-		<div class="layer l0 layer-text"><i class="icon layer-text"></i>Example</div>
-		<div class="layer l0 layer-artboard open"><i class="icon expand open"></i><i class="icon layer-artboard"></i>Artboard Desktop</div>
-		<div class="layer l1 layer-group"><i class="icon expand open"></i><i class="icon layer-group"></i>Page Header Group</div>
-		<div class="layer l2 layer-text active"><i class="icon layer-text"></i>Header</div>
-		<div class="layer l2 layer-rect"><i class="icon layer-rect"></i>Header Box</div>
-		<div class="layer l1 layer-text"><i class="icon layer-text"></i>Welcome text</div>
-		<div class="layer l1 layer-artboard"><i class="icon expand"></i><i class="icon layer-artboard"></i>Mobile Artboard</div>
-		<div class="page"><i class="icon icon-page"></i>Empty Page 2</div>
-		<div class="page"><i class="icon icon-page"></i>Symbols</div>
+		<div class="layer page active"><i class="icon page"></i>Page 1</div>
+		<div class="layer l0 layer-text"><i class="icon text"></i>Example</div>
+		<div class="layer l0 layer-artboard open"><i class="icon expand open"></i><i class="icon artboard"></i>Artboard Desktop</div>
+		<div class="layer l1 layer-group"><i class="icon expand open"></i><i class="icon group"></i>Page Header Group</div>
+		<div class="layer l2 layer-text active"><i class="icon text"></i>Header</div>
+		<div class="layer l2 layer-rect"><i class="icon symbol"></i>Back Icon</div>
+		<div class="layer l2 layer-rect"><i class="icon rect"></i>Header Box</div>
+		<div class="layer l1 layer-text"><i class="icon text"></i>Welcome text</div>
+		<div class="layer l1 layer-artboard"><i class="icon expand"></i><i class="icon artboard"></i>Mobile Artboard</div>
+		<div class="layer page"><i class="icon page"></i>Empty Page 2</div>
+		<div class="layer page"><i class="icon page"></i>Symbols</div>
 	</nav>
 	<main class="artboards">
 		<!-- Canvas elements goes here -->
 		<div class="art text" style="top:30px;left:50px;font-size:24px;font-weight:bold;">Example Header Text</div>
 		<div class="artboard active" style="width: 320px;height:240px; left:50px;top:100px;">
 			<div class="artboard-title">Artboard Desktop</div>
-			<div class="art rect" style="width:100%;height:50px;background:#0180b0"></div>
+			<div class="art rect" style="width:100%;height:50px;background:#98b542"></div>
 			<div class="art text" style="left:20px;top:10px;color:white;font-size:20px;font-weight:bold;">
 				Header
 				<div class="box">
