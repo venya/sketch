@@ -21,6 +21,7 @@ function DocumentPage(title) {
 function Selection() {
 	var self = this;
 	self.items = ko.observableArray();
+
 	self.isEmpty = ko.computed(function() {
 		return self.items().length < 1;
 	}, this);
@@ -38,6 +39,13 @@ function Selection() {
 		console.log(layer);
 		self.items.push(layer);
 		layer.active(true);
+	}
+	self.deselectLayer = function(layer) {
+		console.log("Deselect Layer");
+		console.log(layer);
+		layer.active(false);
+		// TODO: remove from self.items
+		// TODO: return true if layer was selected and now deselected
 	}
 }
 
@@ -119,7 +127,11 @@ function AppModel() {
 	}
 
 	self.deleteSelected = function() {
-		console.log("Delete Selected: NOT IMPLEMENTED!");
+		console.log("Delete Selected");
+		self.selection.items().forEach(function(layer) {
+			self.currentPage().items.remove(layer);
+		});
+		self.selection.selectNone();
 	}
 
 	//	Helper Functions
