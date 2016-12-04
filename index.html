@@ -10,22 +10,23 @@
 <body>
 	<header>
 		<span class="btn-group">
+			<button class="btn btn-toolbar" data-bind="click: clearDocument"><i class="icon clear"></i>Clear</button>
+			<button class="btn btn-toolbar" data-bind="click: loadDocument"><i class="icon load"></i>Load</button>
+			<button class="btn btn-toolbar" data-bind="click: saveDocument" disabled><i class="icon save"></i>Save</button>
+		</span>
+		<span class="btn-group">
 			<button class="btn btn-toolbar" data-bind="click: createNewPage"><i class="icon add-page"></i>Add Page</button>
 			<button class="btn btn-toolbar" data-bind="click: loadDocument"><i class="icon add-artboard"></i>New <u>A</u>rtboard</button>
 			<button class="btn btn-toolbar"><i class="icon add-rect"></i><u>R</u>ectangle</button>
-			<button class="btn btn-toolbar"><i class="icon add-text"></i><u>T</u>ext</button>
 			<button class="btn btn-toolbar"><i class="icon add-circle"></i></button>
+			<button class="btn btn-toolbar"><i class="icon add-text"></i><u>T</u>ext</button>
 		</span>
 		<span class="btn-group">
 			<button class="btn btn-toolbar"><i class="icon do-group"></i><u>G</u>roup</button>
 			<button class="btn btn-toolbar" disabled=disabled><i class="icon un-group"></i><u>U</u>ngroup</button>
+			<button class="btn btn-toolbar"><i class="icon add-symbol"></i>Make <u>S</u>ymbol</button>
 		</span>
-		<button class="btn btn-toolbar"><i class="icon add-symbol"></i>Create <u>S</u>ymbol</button>
-		<span class="btn-group">
-			<button class="btn btn-toolbar" data-bind="click: loadDocument">Load</button>
-			<button class="btn btn-toolbar" data-bind="click: clearDocument">Clear</button>
-			<button class="btn btn-toolbar" data-bind="click: dumpDocument">Dump</button>
-		</span>
+		<button class="btn btn-toolbar" data-bind="click: dumpDocument"><i class="icon dump"></i>Dump</button>
 	</header>
 	<nav>
 		<div class="layer page active"><i class="icon page"></i>Page 1</div>

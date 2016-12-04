@@ -4,11 +4,17 @@
 	width: 16px;
 	height: 16px;
 	vertical-align: top;
-	background: url(../img/icons.png) no-repeat;
+	background: url(../img/icons.png) no-repeat -0px -40px;
 }
 
 
 /*	Toolbar icons	*/
+
+.icon.clear {background-position: -20px -40px;}
+.icon.load {background-position: -40px -40px;}
+.icon.save {background-position: -60px -40px;}
+.icon.dump {background-position: -140px -40px;}
+
 .icon.add-page {background-position: -0px -0px;}
 .icon.add-artboard {background-position: -20px -0px;}
 .icon.do-group {background-position: -40px -0px;}

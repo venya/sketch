@@ -53,6 +53,10 @@ function AppModel() {
 		this.activatePage(0);
 	}
 
+	this.saveDocument = function() {
+		console.log("Save Document: NOT IMPLEMENTED!");
+	}
+
 	this.dumpDocument = function() {
 		console.log(this.document());
 	}
