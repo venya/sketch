@@ -49,12 +49,20 @@ function Selection() {
 	}
 }
 
+function Inspector(_selection) {
+	var self = this;
+	self.selection = _selection;
+
+	self.top = ko.observable(10);
+	self.left = ko.observable(20);
+}
 
 function AppModel() {
 	var self = this;
 	self.document = ko.observableArray();
 	self.currentPage = ko.observable();
 	self.selection = new Selection();
+	self.inspector = new Inspector(self.selection);
 
 	//	Page Operations
 

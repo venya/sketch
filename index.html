@@ -82,7 +82,12 @@
 		</div>
 	</main>
 	<aside>
-		<h3>Inspector</h3>
+		<div data-bind="with: inspector">
+		<h3>Inspector <sup data-bind="text: selection.items().length"></sup></h3>
+		<p><label>Top: <input data-bind="value: top" type="number" style="width: 50px;"></label>
+		   <label>Left: <input data-bind="value: left" type="number" style="width: 50px;"></label></p>
+		</div>
+		<hr>
 		<p><label>Title: <input></label></p>
 		<p><label>Text: <input data-bind="value: headerText"></label></p>
 		<p><label>Top: <input data-bind="value: headerTop" type="number" style="width: 50px;"></label>
