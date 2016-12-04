@@ -3,12 +3,13 @@ function DocumentLayer(type, title) {
 	var self = this;
 	self.type = type;
 	self.title = title;
+	self.active =  ko.observable(false);
 }
 
 function DocumentPage(title) {
 	var self = this;
 	self.title = title;
-	self.active =  ko.observable(false);
+	self.active = ko.observable(false);
 	self.items = ko.observableArray([
 		// Initialize with some dummy test data
 		new DocumentLayer("text", "Document Header"),
@@ -17,18 +18,40 @@ function DocumentPage(title) {
 	]);
 }
 
+function Selection() {
+	var self = this;
+	self.items = ko.observableArray();
+	self.isEmpty = ko.computed(function() {
+		return self.items().length < 1;
+	}, this);
+	self.isMultiple = ko.computed(function() {
+		return self.items().length > 1;
+	}, this);
+	self.selectNone = function() {
+		self.items().forEach(function(layer) {
+			layer.active(false);
+		})
+		console.log("Select None");
+		self.items([]);
+	}
+	self.selectLayer = function(layer) {
+		console.log(layer);
+		self.items.push(layer);
+		layer.active(true);
+	}
+}
 
 
 function AppModel() {
 	var self = this;
-	this.document = ko.observableArray();
-	this.currentPage = ko.observable();
+	self.document = ko.observableArray();
+	self.currentPage = ko.observable();
+	self.selection = new Selection();
 
-	// Document Operations
+	//	Page Operations
 
-	this.activatePage = function(page) {
+	self.activatePage = function(page) {
 		console.log("Set active page")
-		console.log(page);
 		if (self.currentPage()) {
 			// remove active mark from previous page
 			self.currentPage().active(false);
@@ -36,6 +59,15 @@ function AppModel() {
 		self.currentPage(page);
 		page.active(true);
 	}
+
+	this.createNewPage = function() {
+		console.log("Create new page");
+		var page = new DocumentPage("Page " + (this.document().length+1) )
+		this.document.push(page);
+		this.activatePage(page);
+	}
+
+	// Document Operations
 
 	this.clearDocument = function() {
 		console.log("Clear Document!");
@@ -60,22 +92,20 @@ function AppModel() {
 		console.log(this.document());
 	}
 
-	this.createNewPage = function() {
-		console.log("Create new page");
-		var page = new DocumentPage("Page " + (this.document().length+1) )
-		this.document.push(page);
-		this.activatePage(page);
-	}
-
 	// Layer Operations
 
-	this.activateLayer = function(index) {
-		console.log("Activate layer: " + index + " (NOT IMPLEMENTED!)");
+	this.activateLayer = function(layer) {
+		console.log("Activate layer:");
+		// console.log(layer);
+		if (!(event.shiftKey || event.ctrlKey))
+			self.selection.selectNone();
+		self.selection.selectLayer(layer);
 	}
 
 	this.createLayer = function(content) {
+		this.selection.selectNone();
 		this.currentPage().items.push(content);
-		this.activateLayer();
+		this.activateLayer(content);
 	}
 
 	this.createArtboard = function() {
@@ -88,6 +118,16 @@ function AppModel() {
 		this.createLayer(new DocumentLayer("rect", "New Rectangle"));
 	}
 
+	self.deleteSelected = function() {
+		console.log("Delete Selected: NOT IMPLEMENTED!");
+	}
+
+	//	Helper Functions
+
+	// Return 'active' if passed item object has .active property set to True
+	self.activeClass = function(item) {
+		return item.active() ? 'active' : '';
+	}
 
 	this.headerTop = ko.observable(10);
 	this.headerLeft = ko.observable(20);

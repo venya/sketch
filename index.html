@@ -22,9 +22,10 @@
 			<button class="btn btn-toolbar"><i class="icon add-text"></i><u>T</u>ext</button>
 		</span>
 		<span class="btn-group">
-			<button class="btn btn-toolbar"><i class="icon do-group"></i><u>G</u>roup</button>
+			<button class="btn btn-toolbar" data-bind="click: deleteSelected, disable: selection.isEmpty()"><i class="icon delete"></i><u>D</u>elete</button>
+			<button class="btn btn-toolbar" data-bind="disable: !selection.isMultiple()"><i class="icon do-group"></i><u>G</u>roup</button>
 			<button class="btn btn-toolbar" disabled=disabled><i class="icon un-group"></i><u>U</u>ngroup</button>
-			<button class="btn btn-toolbar"><i class="icon add-symbol"></i>Make <u>S</u>ymbol</button>
+			<button class="btn btn-toolbar" data-bind="disable: !selection.isMultiple()"><i class="icon add-symbol"></i>Make <u>S</u>ymbol</button>
 		</span>
 		<button class="btn btn-toolbar" data-bind="click: dumpDocument"><i class="icon dump"></i>Dump</button>
 	</header>
@@ -38,19 +39,17 @@
 		<div class="layer l2 layer-rect"><i class="icon rect"></i>Header Box</div>
 		<div class="layer l1 layer-text"><i class="icon text"></i>Welcome text</div>
 		<div class="layer l1 layer-artboard"><i class="icon expand"></i><i class="icon artboard"></i>Mobile Artboard</div>
-		<div class="layer page"><i class="icon page"></i>Empty Page 2</div>
-		<div class="layer page"><i class="icon page"></i>Symbols</div>
 
 		following is generated:
 
 		<div data-bind="foreach: document">
-			<div class="layer page" data-bind="css: active() ? 'active' : '', click: $parent.activatePage">
+			<div class="layer page" data-bind="css: $root.activeClass($data), a: active() ? 'active' : '', click: $parent.activatePage">
 				<i class="icon page"></i>
 				<span data-bind="text: title"></span>
 			</div>
 			<!-- ko if: active() -->
 			<div data-bind="foreach: active() ? items: []">
-				<div class="layer l1" data-bind="css: type">
+				<div class="layer l1" data-bind="css: type+' '+$root.activeClass($data), click: $root.activateLayer">
 					<i class="icon" data-bind="css: type"></i>
 					<span data-bind="text: title"></span>
 				</div>
@@ -58,7 +57,7 @@
 			<!-- /ko -->
 		</div>
 	</nav>
-	<main class="artboards">
+	<main class="artboards" data-bind="click: selection.selectNone">
 		<!-- Canvas elements goes here -->
 		<div class="art text" style="top:30px;left:50px;font-size:24px;font-weight:bold;">Example Header Text</div>
 		<div class="artboard active" style="width: 320px;height:240px; left:50px;top:100px;">
@@ -88,7 +87,9 @@
 		<p><label>Text: <input data-bind="value: headerText"></label></p>
 		<p><label>Top: <input data-bind="value: headerTop" type="number" style="width: 50px;"></label>
 		   <label>Left: <input data-bind="value: headerLeft" type="number" style="width: 50px;"></label></p>
-		<div class="dump" data-bind="text: ko.toJSON($root)"></div>
+		<div class="dump" data-bind="text: ko.toJSON($root.document)"></div>
+		<h4>selection:</h4>
+		<div class="dump" data-bind="text: ko.toJSON($root.selection)"></div>
 	</aside>
 <script src="js/knockout.js"></script>
 <script src="js/app.js"></script>
