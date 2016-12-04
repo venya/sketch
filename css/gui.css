@@ -27,6 +27,13 @@
 	background-color: silver;
 	box-shadow: inset 1px 1px 4px rgba(0,0,0, .4);
 }
+.btn-toolbar[disabled] {
+	color: #999;
+	text-shadow: 0 1px white;
+}
+.btn-toolbar[disabled] .icon {
+	opacity: 0.3;
+}
 
 .btn-toolbar .icon {
 	margin-right: 4px;
