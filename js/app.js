@@ -20,22 +20,21 @@ function DocumentPage(title) {
 
 
 function AppModel() {
-
+	var self = this;
 	this.document = ko.observableArray();
 	this.currentPage = ko.observable();
 
 	// Document Operations
 
-	this.activatePage = function(index) {
-		console.log("Set active page: "+index);
-		if (this.currentPage()) {
+	this.activatePage = function(page) {
+		console.log("Set active page")
+		console.log(page);
+		if (self.currentPage()) {
 			// remove active mark from previous page
-			this.currentPage().active(false);
+			self.currentPage().active(false);
 		}
-		this.currentPage(this.document()[index]);
-		var p = this.currentPage();
-		p.active(true);
-		// console.log(p);
+		self.currentPage(page);
+		page.active(true);
 	}
 
 	this.clearDocument = function() {
@@ -50,7 +49,7 @@ function AppModel() {
 			new DocumentPage("Empty Page 2"),
 			new DocumentPage("Symbols")
 		]);
-		this.activatePage(0);
+		this.activatePage(this.document()[0]);
 	}
 
 	this.saveDocument = function() {
@@ -63,8 +62,9 @@ function AppModel() {
 
 	this.createNewPage = function() {
 		console.log("Create new page");
-		this.document.push(new DocumentPage("Page " + (this.document().length+1) ));
-		this.activatePage(this.document().length-1);
+		var page = new DocumentPage("Page " + (this.document().length+1) )
+		this.document.push(page);
+		this.activatePage(page);
 	}
 
 	// Layer Operations
