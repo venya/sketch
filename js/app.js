@@ -8,7 +8,7 @@ function DocumentLayer(type, title) {
 function DocumentPage(title) {
 	var self = this;
 	self.title = title;
-	self.active =  false;
+	self.active =  ko.observable(false);
 	self.items = ko.observableArray([
 		// Initialize with some dummy test data
 		new DocumentLayer("text", "Document Header"),
@@ -28,13 +28,13 @@ function AppModel() {
 
 	this.activatePage = function(index) {
 		console.log("Set active page: "+index);
-		if (this.currentPage) {
+		if (this.currentPage()) {
 			// remove active mark from previous page
-			// this.currentPage.active = false;
+			this.currentPage().active(false);
 		}
 		this.currentPage(this.document()[index]);
 		var p = this.currentPage();
-		p.active = true;
+		p.active(true);
 		console.log(p);
 	}
 
@@ -68,7 +68,6 @@ function AppModel() {
 	}
 
 
-
 	this.headerTop = ko.observable(10);
 	this.headerLeft = ko.observable(20);
 	this.headerText = ko.observable("Dynamic Header Example");
@@ -81,9 +80,7 @@ function AppModel() {
 
 
 	// Initialize!
-
 	this.loadDocument();
-
 }
 
 // Activates knockout.js

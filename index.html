@@ -44,16 +44,18 @@
 		following is generated:
 
 		<div data-bind="foreach: document">
-			<div class="layer page" data-bind="css: active ? 'active' : '' ">
+			<div class="layer page" data-bind="css: active() ? 'active' : '' ">
 				<i class="icon page"></i>
 				<span data-bind="text: title"></span>
 			</div>
-			<div data-bind="foreach: active ? items: []">
+			<!-- ko if: active() -->
+			<div data-bind="foreach: active() ? items: []">
 				<div class="layer l1" data-bind="css: type">
 					<i class="icon" data-bind="css: type"></i>
 					<span data-bind="text: title"></span>
 				</div>
 			</div>
+			<!-- /ko -->
 		</div>
 	</nav>
 	<main class="artboards">
