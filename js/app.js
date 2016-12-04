@@ -35,7 +35,7 @@ function AppModel() {
 		this.currentPage(this.document()[index]);
 		var p = this.currentPage();
 		p.active(true);
-		console.log(p);
+		// console.log(p);
 	}
 
 	this.clearDocument = function() {
@@ -65,6 +65,27 @@ function AppModel() {
 		console.log("Create new page");
 		this.document.push(new DocumentPage("Page " + (this.document().length+1) ));
 		this.activatePage(this.document().length-1);
+	}
+
+	// Layer Operations
+
+	this.activateLayer = function(index) {
+		console.log("Activate layer: " + index + " (NOT IMPLEMENTED!)");
+	}
+
+	this.createLayer = function(content) {
+		this.currentPage().items.push(content);
+		this.activateLayer();
+	}
+
+	this.createArtboard = function() {
+		console.log("Create new Artboard");
+		this.createLayer(new DocumentLayer("artboard", "New Artboard"));
+	}
+
+	this.createRectangle = function() {
+		console.log("Create new Rectangle");
+		this.createLayer(new DocumentLayer("rect", "New Rectangle"));
 	}
 
 
